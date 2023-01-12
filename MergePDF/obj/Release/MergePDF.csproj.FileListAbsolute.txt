@@ -1,0 +1,10 @@
+C:\Users\uture\source\repos\MergePDF\MergePDF\bin\Release\MergePDF.exe.config
+C:\Users\uture\source\repos\MergePDF\MergePDF\bin\Release\MergePDF.exe
+C:\Users\uture\source\repos\MergePDF\MergePDF\bin\Release\MergePDF.pdb
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.csproj.AssemblyReference.cache
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.Form1.resources
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.Properties.Resources.resources
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.csproj.GenerateResource.cache
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.csproj.CoreCompileInputs.cache
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.exe
+C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Release\MergePDF.pdb
