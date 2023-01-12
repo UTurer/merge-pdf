@@ -31,26 +31,31 @@ namespace MergePDF
         {
             listView1.MultiSelect = true;
             radioButton1.Checked = true;
-            radioButton3.Checked = true;
             textBox1.Enabled = false;
-            textBox2.Enabled = false;
             button6.Enabled = false;
-            button7.Enabled = false;
             showFileNameOnlyToolStripMenuItem.Checked = true;
         }
 
         private void button4_Click(object sender, System.EventArgs e)
         {
-            if (listView1.Items.Count < 0)
+            if (listView1.Items.Count < 1)
                 return;
 
-            if (listView1.SelectedItems.Count < 0)
+            if (listView1.SelectedItems.Count < 1)
                 return;
+
+            System.Windows.Forms.ListViewItem[] listViewItems1 = new System.Windows.Forms.ListViewItem[listView1.SelectedItems.Count];
 
             for (int i = 0; i < listView1.SelectedItems.Count;i++)
             {
-                listView1.Items.Remove(listView1.SelectedItems[i]);
+                listViewItems1[i] = listView1.SelectedItems[i];
             }
+
+            for (int i=0;i<listViewItems1.Length;i++)
+            {
+                listView1.Items.Remove(listViewItems1[i]);
+            }
+
         }
 
         private void button2_Click(object sender, System.EventArgs e)
@@ -100,8 +105,20 @@ namespace MergePDF
         private void button5_Click(object sender, System.EventArgs e)
         {
             if (listView1.Items.Count < 2)
+            {
+                System.Windows.Forms.MessageBox.Show("Please add two or more pdf files to the list");
                 return;
-        
+            }
+                
+            System.Windows.Forms.SaveFileDialog saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            saveFileDialog1.Filter = "*.pdf|*.pdf|All Files|*.*";
+            System.Windows.Forms.DialogResult dialogResult1 = saveFileDialog1.ShowDialog();
+            if (dialogResult1 != System.Windows.Forms.DialogResult.OK)
+                return;
+
+            System.String dirOutput = System.IO.Path.GetDirectoryName(saveFileDialog1.FileName);
+            System.String filenameOutput = System.IO.Path.GetFileName(saveFileDialog1.FileName);
+
             System.String dirEXE = System.AppContext.BaseDirectory;
             System.String filenameEXE = "pdftk.exe";
             if (radioButton2.Checked)
@@ -110,18 +127,8 @@ namespace MergePDF
                 filenameEXE = System.IO.Path.GetFileName(textBox1.Text);
             }
             System.String pathEXE = System.IO.Path.Combine(dirEXE, filenameEXE);
-
-
-            System.String dirOutput = System.AppContext.BaseDirectory;
-            System.String filenameOutput = "merged.pdf";
-            if (radioButton4.Checked)
-            {
-                dirOutput = System.IO.Path.GetDirectoryName(textBox2.Text);
-                filenameOutput = System.IO.Path.GetFileName(textBox2.Text);
-            }
             
             System.String[] pathPDFs = new System.String[2];
-
             for (int i=0;i<listView1.Items.Count-1;i++)
             {
                 if (i==0)
@@ -138,7 +145,7 @@ namespace MergePDF
                 }
                 else
                 {
-                    output = "dummy" + i.ToString() + ".pdf";
+                    output = "_erase_me_" + i.ToString() + ".pdf";
                 }
                 System.String pathOutput = System.IO.Path.Combine(dirOutput, output);
                 System.String string2 = "A=\"" + pathPDFs[0] + "\" " + "B=\"" + pathPDFs[1] + "\" cat A B output \"" + pathOutput + "\"";
@@ -156,7 +163,7 @@ namespace MergePDF
                 }
                 richTextBox1.AppendText(stringBuilder1.ToString() + System.Environment.NewLine);
                 process1.WaitForExit();
-                pathPDFs[0] = output;
+                pathPDFs[0] = pathOutput;
             }
         }
 
@@ -182,31 +189,6 @@ namespace MergePDF
             if(dialogResult1 == System.Windows.Forms.DialogResult.OK)
             {
                 textBox1.Text = openFileDialog1.FileName;
-            }
-        }
-
-        private void button7_Click(object sender, System.EventArgs e)
-        {
-            System.Windows.Forms.SaveFileDialog saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            saveFileDialog1.Filter = "*.pdf|*.pdf|All Files|*.*";
-            System.Windows.Forms.DialogResult dialogResult1 = saveFileDialog1.ShowDialog();
-            if (dialogResult1 == System.Windows.Forms.DialogResult.OK)
-            {
-                textBox2.Text = saveFileDialog1.FileName;
-            }
-        }
-
-        private void radioButton4_CheckedChanged(object sender, System.EventArgs e)
-        {
-            if (radioButton4.Checked)
-            {
-                textBox2.Enabled = true;
-                button7.Enabled = true;
-            }
-            else
-            {
-                textBox2.Enabled = false;
-                button7.Enabled = false;
             }
         }
 
@@ -243,16 +225,16 @@ namespace MergePDF
             richTextBox1.Parent = form1;
             richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             System.String string1 = "";
-            string1 = string1 + "-----------------------" + System.Environment.NewLine;
-            string1 = string1 + "Version: 1.00" + System.Environment.NewLine;
-            string1 = string1 + "Created By: Utku TURER" + System.Environment.NewLine;
-            string1 = string1 + "-----------------------" + System.Environment.NewLine;
-            string1 = string1 + "This program needs pdftk.exe and libiconv2.dll to work. ";
-            string1 = string1 + "Both of these files must be in the same folder. Because of ";
-            string1 = string1 + "limitations of pdftk.exe, only two files can be combined at ";
-            string1 = string1 + "a time. Hence if more then two pdf files are merged, ";
-            string1 = string1 + "intermediate pdf files are generated. These files are named ";
-            string1 = string1 + "dummy and they can be safely erased.";
+            string1 += "-----------------------" + System.Environment.NewLine;
+            string1 += "Version: 1.00" + System.Environment.NewLine;
+            string1 += "Created By: Utku TURER" + System.Environment.NewLine;
+            string1 += "-----------------------" + System.Environment.NewLine;
+            string1 += "This program needs pdftk.exe and libiconv2.dll to work. ";
+            string1 += "Both of these files must be in the same folder. Because of ";
+            string1 += "limitations of pdftk.exe, only two files can be combined at ";
+            string1 += "a time. Hence if more then two pdf files are merged, ";
+            string1 += "intermediate pdf files are generated. These files are named ";
+            string1 += "_erase_me_#.pdf and they can be safely erased.";
             richTextBox1.Text = string1;
             form1.Show();
         }
@@ -273,6 +255,11 @@ namespace MergePDF
                 listView1.Items[i].Text = (System.String)listView1.Items[i].Tag;
             }
             showFileNameOnlyToolStripMenuItem.Checked = false;
+        }
+
+        private void preferencesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("Not implemented yet...");
         }
     }
 }

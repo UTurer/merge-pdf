@@ -8,3 +8,13 @@ C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Debug\MergePDF.csproj.CoreComp
 C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Debug\MergePDF.exe
 C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Debug\MergePDF.pdb
 C:\Users\uture\source\repos\MergePDF\MergePDF\obj\Debug\MergePDF.csproj.AssemblyReference.cache
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Debug\MergePDF.exe.config
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Debug\MergePDF.exe
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Debug\MergePDF.pdb
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.csproj.AssemblyReference.cache
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.Form1.resources
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.Properties.Resources.resources
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.csproj.GenerateResource.cache
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.csproj.CoreCompileInputs.cache
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.exe
+C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Debug\MergePDF.pdb
