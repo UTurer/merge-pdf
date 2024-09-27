@@ -145,7 +145,7 @@ namespace MergePDF
                 }
                 else
                 {
-                    output = "_erase_me_" + i.ToString() + ".pdf";
+                    output = "_delete_me_" + i.ToString() + ".pdf";
                 }
                 System.String pathOutput = System.IO.Path.Combine(dirOutput, output);
                 System.String string2 = "A=\"" + pathPDFs[0] + "\" " + "B=\"" + pathPDFs[1] + "\" cat A B output \"" + pathOutput + "\"";
@@ -234,7 +234,7 @@ namespace MergePDF
             string1 += "limitations of pdftk.exe, only two files can be combined at ";
             string1 += "a time. Hence if more then two pdf files are merged, ";
             string1 += "intermediate pdf files are generated. These files are named ";
-            string1 += "_erase_me_#.pdf and they can be safely erased.";
+            string1 += "_delete_me_#.pdf and they can be safely deleted.";
             richTextBox1.Text = string1;
             form1.Show();
         }

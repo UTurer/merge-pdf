@@ -18,3 +18,13 @@ C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.cspro
 C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.csproj.CoreCompileInputs.cache
 C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.exe
 C:\Users\uture\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.pdb
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Release\MergePDF.exe.config
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Release\MergePDF.exe
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\bin\Release\MergePDF.pdb
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.csproj.AssemblyReference.cache
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.Form1.resources
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.Properties.Resources.resources
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.csproj.GenerateResource.cache
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.csproj.CoreCompileInputs.cache
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.exe
+C:\Users\utkut\Source\Repos\UTurer\merge-pdf\MergePDF\obj\Release\MergePDF.pdb
